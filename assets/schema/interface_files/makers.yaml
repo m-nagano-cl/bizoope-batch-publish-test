@@ -1,0 +1,39 @@
+---
+hidden: true
+name: メーカーマスタ
+filename: maker_*yyyymmddhhmiss*.tsv
+fields:
+  - name: company_code
+    type: STRING
+    key: true
+    description: 企業コード
+    required: true
+
+  - name: maker_code
+    type: STRING
+    key: true
+    description: メーカーコード
+    required: true
+
+  - name: maker_name
+    type: STRING
+    description: メーカー名称
+    required: true
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    description: 基幹出力日時
+    required: true
+
+  - name: is_deleted
+    type: BOOLEAN
+    description: 削除フラグ
+    required: true

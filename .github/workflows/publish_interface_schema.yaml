@@ -1,0 +1,43 @@
+name: publish interface schema
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci
+        working-directory: ./tools/generate_interface_definition
+
+      - run: npm run build
+        working-directory: ./tools/generate_interface_definition
+
+      # - name: Deploy
+      #   uses: cpina/github-action-push-to-another-repository@master
+      #   env:
+      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      #   with:
+      #     source-directory: ./dist/連携ファイルフォーマット定義書/page
+      #     destination-github-username: "bizoope"
+      #     destination-repository-name: "bizoope-idpos-interface-file-schema"
+      #     target-branch: main
+      #     user-email: deploy@c3lab.com
+      #     commit-message: deploy

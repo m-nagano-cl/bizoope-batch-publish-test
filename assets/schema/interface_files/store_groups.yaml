@@ -1,0 +1,163 @@
+---
+name: 店舗グループマスタ
+filename: store_groups_*yyyymmddhhmiss*.tsv
+comment: |-
+  店舗グループ（地区や規模でのグループ分け）定義です。
+
+  アプリケーションでの店舗選択を容易にするためのマスタです。このマスタがなくても店舗選択は可能です。
+
+  例えば、このような連携ファイル内容は（コード項目を一部割愛しています）、
+
+  | 企業コード | 店舗G項目名称 | 店舗G01名称 | 店舗G02名称 | (略) | 店舗コード |
+  | ---------- | ------------- | ----------- | ----------- | ---- | ---------- |
+  | 企業       | 地区          | 静岡       |  東海    | 〜   | 店舗01     |
+  | 企業       | 地区          | 愛知       | 東海     | 〜   | 店舗02     |
+  | 企業       | 地区          | 東京      |  関東     | 〜   | 店舗03     |
+  | 企業       | 規模          | 大型店       | -           | 〜   | 店舗01     |
+  | 企業       | 規模          | 小型店       | -           | 〜   | 店舗02     |
+  | 企業       | 規模          | 小型店       | -           | 〜   | 店舗03     |
+
+  このような階層構造を表しています。
+
+  ```
+  ├── 規模
+  │   ├── 大型店
+  │   │   └── 店舗01
+  │   └── 小型店
+  │       ├── 店舗02
+  │       └── 店舗03
+  └── 地区
+      ├── 東海
+      │   ├── 静岡
+      │   │   └── 店舗01
+      │   └── 愛知
+      │       └── 店舗02
+      └── 関東
+          └── 東京
+              └── 店舗03
+  ```
+
+  階層は下から1->10で、最大10階層までです。
+
+  店舗グループ項目内で同一店舗が複数のグループに属することはできません（例えば、店舗01が大型店にも小型店にも属することはできません）。
+
+fields:
+  - name: company_code
+    type: STRING
+    key: true
+    description: 企業コード
+    required: true
+
+  - name: store_code
+    type: STRING
+    key: true
+    required: true
+    description: 店舗コード
+
+  - name: store_group_col_code
+    type: STRING
+    key: true
+    description: 店舗グループ項目コード
+    required: true
+
+  - name: store_group_col_name
+    type: STRING
+    description: 店舗グループ項目名称
+
+  - name: store_group_code01
+    type: STRING
+    description: 店舗グループ01コード
+
+  - name: store_group_name01
+    type: STRING
+    description: 店舗グループ01名称
+
+  - name: store_group_code02
+    type: STRING
+    description: 店舗グループ02コード
+
+  - name: store_group_name02
+    type: STRING
+    description: 店舗グループ02名称
+
+  - name: store_group_code03
+    type: STRING
+    description: 店舗グループ03コード
+
+  - name: store_group_name03
+    type: STRING
+    description: 店舗グループ03名称
+
+  - name: store_group_code04
+    type: STRING
+    description: 店舗グループ04コード
+
+  - name: store_group_name04
+    type: STRING
+    description: 店舗グループ04名称
+
+  - name: store_group_code05
+    type: STRING
+    description: 店舗グループ05コード
+
+  - name: store_group_name05
+    type: STRING
+    description: 店舗グループ05名称
+
+  - name: store_group_code06
+    type: STRING
+    description: 店舗グループ06コード
+
+  - name: store_group_name06
+    type: STRING
+    description: 店舗グループ06名称
+
+  - name: store_group_code07
+    type: STRING
+    description: 店舗グループ07コード
+
+  - name: store_group_name07
+    type: STRING
+    description: 店舗グループ07名称
+
+  - name: store_group_code08
+    type: STRING
+    description: 店舗グループ08コード
+
+  - name: store_group_name08
+    type: STRING
+    description: 店舗グループ08名称
+
+  - name: store_group_code09
+    type: STRING
+    description: 店舗グループ09コード
+
+  - name: store_group_name09
+    type: STRING
+    description: 店舗グループ09名称
+
+  - name: store_group_code10
+    type: STRING
+    description: 店舗グループ10コード
+
+  - name: store_group_name10
+    type: STRING
+    description: 店舗グループ10名称
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    required: true
+    description: 基幹出力日時
+
+  - name: is_deleted
+    type: BOOLEAN
+    description: 削除フラグ
+    required: true

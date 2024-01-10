@@ -1,0 +1,45 @@
+---
+hidden: true
+name: 客数データ（日、店舗別）
+filename: receipt_count_*yyyymmddhhmiss*.tsv
+fields:
+  - name: ymd
+    type: DATE
+    key: true
+    description: 年月日
+    required: true
+
+  - name: company_code
+    type: STRING
+    key: true
+    description: 企業コード
+    required: true
+
+  - name: store_code
+    type: STRING
+    key: true
+    description: 店舗コード
+    required: true
+
+  - name: receipt_count
+    type: INTEGER
+    description: 客数
+    required: true
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    description: 基幹出力日時
+    required: true
+
+  - name: is_deleted
+    type: BOOLEAN
+    description: 削除フラグ
+    required: true

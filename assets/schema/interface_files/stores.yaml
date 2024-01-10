@@ -1,0 +1,98 @@
+---
+name: 店舗マスタ
+filename: stores_*yyyymmddhhmiss*.tsv
+fields:
+  - name: company_code
+    type: STRING
+    key: true
+    description: 企業コード
+    required: true
+
+  - name: store_code
+    type: STRING
+    key: true
+    description: 店舗コード
+    required: true
+
+  - name: store_name
+    type: STRING
+    description: 店舗名称
+    required: true
+
+  - name: shop_floor
+    type: NUMERIC
+    description: 売場面積
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: open_on
+    type: DATE
+    description: 開店日
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: is_new
+    type: BOOLEAN
+    description: 新店フラグ
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: renovated_on
+    type: DATE
+    description: 改装日
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: is_renovated
+    type: BOOLEAN
+    description: 改装店フラグ
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: closed_on
+    type: DATE
+    description: 閉店日
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: is_closed
+    type: BOOLEAN
+    description: 閉店フラグ
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: pos_machine_code
+    type: STRING
+    description: POS機種コード
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: use_pos_machine
+    type: BOOLEAN
+    description: POS取扱フラグ
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: zip
+    type: STRING
+    description: 郵便番号
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: address
+    type: STRING
+    description: 住所
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: tel
+    type: STRING
+    description: 電話番号
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    description: 基幹出力日時
+    required: true
+
+  - name: is_deleted
+    type: BOOLEAN
+    description: 削除フラグ
+    required: true

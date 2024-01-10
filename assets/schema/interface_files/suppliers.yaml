@@ -1,0 +1,48 @@
+---
+name: 取引先マスタ
+filename: suppliers_*yyyymmddhhmiss*.tsv
+fields:
+  - name: company_code
+    type: STRING
+    key: true
+    description: 企業コード
+    required: true
+
+  - name: supplier_code
+    type: STRING
+    key: true
+    description: 取引先コード
+    required: true
+
+  - name: supplier_name
+    type: STRING
+    description: 取引先名称
+    required: true
+
+  - name: shiiresaki_code
+    type: STRING
+    description: 仕入先コード
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: ordering_method
+    type: STRING
+    description: 発注方法
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    description: 基幹出力日時
+    required: true
+
+  - name: is_deleted
+    type: BOOLEAN
+    description: 削除フラグ
+    required: true

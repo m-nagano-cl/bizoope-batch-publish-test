@@ -1,0 +1,119 @@
+---
+name: 分類マスタ
+filename: item_categories_*yyyymmddhhmiss*.tsv
+comment: |-
+  階層は下から1->10で、最大10階層までです。
+fields:
+  - name: company_code
+    type: STRING
+    key: true
+    description: 企業コード
+    required: true
+
+  - name: category_code
+    type: STRING
+    key: true
+    description: ユニーク分類ボトムコード
+    required: true
+
+  - name: category_name
+    type: STRING
+    description: ユニーク分類名称
+
+  - name: category01_code
+    type: STRING
+    description: 分類階層1コード
+
+  - name: category01_name
+    type: STRING
+    description: 分類階層1名称
+
+  - name: category02_code
+    type: STRING
+    description: 分類階層2コード
+
+  - name: category02_name
+    type: STRING
+    description: 分類階層2名称
+
+  - name: category03_code
+    type: STRING
+    description: 分類階層3コード
+
+  - name: category03_name
+    type: STRING
+    description: 分類階層3名称
+
+  - name: category04_code
+    type: STRING
+    description: 分類階層4コード
+
+  - name: category04_name
+    type: STRING
+    description: 分類階層4名称
+
+  - name: category05_code
+    type: STRING
+    description: 分類階層5コード
+
+  - name: category05_name
+    type: STRING
+    description: 分類階層5名称
+
+  - name: category06_code
+    type: STRING
+    description: 分類階層6コード
+
+  - name: category06_name
+    type: STRING
+    description: 分類階層6名称
+
+  - name: category07_code
+    type: STRING
+    description: 分類階層7コード
+
+  - name: category07_name
+    type: STRING
+    description: 分類階層7名称
+
+  - name: category08_code
+    type: STRING
+    description: 分類階層8コード
+
+  - name: category08_name
+    type: STRING
+    description: 分類階層8名称
+
+  - name: category09_code
+    type: STRING
+    description: 分類階層9コード
+
+  - name: category09_name
+    type: STRING
+    description: 分類階層9名称
+
+  - name: category10_code
+    type: STRING
+    description: 分類階層10コード
+
+  - name: category10_name
+    type: STRING
+    description: 分類階層10名称
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    description: 基幹出力日時
+    required: true
+
+  - name: is_deleted
+    type: BOOLEAN
+    description: 削除フラグ
+    required: true

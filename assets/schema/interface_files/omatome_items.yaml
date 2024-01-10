@@ -1,0 +1,29 @@
+---
+name: 商品おまとめコード
+filename: omatome_items_*yyyymmddhhmiss*.tsv
+fields:
+  - name: omatome_code
+    type: STRING
+    key: true
+    description: おまとめコード
+    required: true
+
+  - name: company_code
+    type: STRING
+    key: true
+    description: 企業コード
+    required: true
+
+  - name: item_code
+    type: STRING
+    key: true
+    description: 商品コード
+    required: true
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日

@@ -1,0 +1,179 @@
+---
+name: 商品マスタ
+filename: items_*yyyymmddhhmiss*.tsv
+fields:
+  - name: company_code
+    type: STRING
+    key: true
+    description: 企業コード
+    required: true
+
+  - name: item_code
+    type: STRING
+    key: true
+    description: 商品コード１
+    required: true
+    comment: 実績と結びつくコード
+
+  - name: item_name
+    type: STRING
+    description: 商品名称１
+    required: true
+
+  - name: item_kana_name
+    type: STRING
+    description: カナ名称１
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: item02_code
+    type: STRING
+    description: 商品コード２
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: item02_name
+    type: STRING
+    description: 商品名称２
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: item02_kana_name
+    type: STRING
+    description: カナ名称２
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: item03_code
+    type: STRING
+    description: 商品コード３
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: item03_name
+    type: STRING
+    description: 商品名称３
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: item03_kana_name
+    type: STRING
+    description: カナ名称３
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: control_no
+    type: STRING
+    description: 管理No
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: gauge
+    type: STRING
+    description: 規格
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: category_code
+    type: STRING
+    description: 分類ボトムコード
+    required: true
+
+  - name: composite_qty
+    type: NUMERIC
+    description: 換算数
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: sales_unit_price
+    type: NUMERIC
+    description: 基本売単価
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: original_unit_price
+    type: NUMERIC
+    description: 基本原単価
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: list_price
+    type: NUMERIC
+    description: 定価
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: handle_type
+    type: STRING
+    description: 取扱区分
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: lot_size
+    type: NUMERIC
+    description: 入数
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: order_unit_qty
+    type: NUMERIC
+    description: 発注単位数量
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: supplier_code
+    type: STRING
+    description: 取引先コード
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: maker_code
+    type: STRING
+    description: メーカーコード
+
+  - name: order_started_on
+    type: DATE
+    description: 発注開始日
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: order_terminated_on
+    type: DATE
+    description: 発注終了日
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: handle_started_on
+    type: DATE
+    description: 取扱開始日
+    comment: この日付から3ヶ月以内の商品は「新商品」と判断されます（設定により期間は異なることがあります）。新商品はPOS分析結果表示時に配色変更などが行われます。
+
+  - name: handle_terminated_on
+    type: DATE
+    description: 取扱終了日
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: tax_type
+    type: STRING
+    description: 税区分
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: is_order_stopped
+    type: BOOLEAN
+    description: 発注停止フラグ
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: size_width
+    type: NUMERIC
+    description: 商品サイズ幅
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: size_height
+    type: NUMERIC
+    description: 商品サイズ高さ
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: size_depth
+    type: NUMERIC
+    description: 商品サイズ奥行
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+    comment: 取扱開始日の指定がない場合、この日付で新商品の判断を行います。
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    description: 基幹出力日時
+    required: true
+
+  - name: is_deleted
+    type: BOOLEAN
+    description: 削除フラグ
+    required: true

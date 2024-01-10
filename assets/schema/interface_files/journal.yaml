@@ -1,0 +1,104 @@
+---
+name: ジャーナル
+filename: journal_*yyyymmddhhmiss*.tsv
+fields:
+  - name: ymd
+    type: DATE
+    key: true
+    description: 売上日
+    required: true
+
+  - name: company_code
+    type: STRING
+    key: true
+    description: 企業コード
+    required: true
+
+  - name: store_code
+    type: STRING
+    key: true
+    description: 店舗コード
+    required: true
+
+  - name: pos_no
+    type: INTEGER
+    key: true
+    description: POS番号
+
+  - name: receipt_code
+    type: INTEGER
+    key: true
+    description: レシート番号
+
+  - name: receipt_line
+    type: INTEGER
+    key: true
+    description: レシート行番号
+
+  - name: pos_time
+    type: STRING
+    description: 取引時刻
+    comment: HHMM形式
+
+  - name: sale_type
+    type: STRING
+    description: 売上区分
+    comment: '支払い区分(現金、カード等)を設定。[（未使用）](#「未使用」って？)'
+
+  - name: item_type
+    type: STRING
+    description: 商品区分
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: item_code
+    type: STRING
+    description: 商品コード
+    required: true
+
+  - name: qty
+    type: NUMERIC
+    description: 買上点数
+    required: true
+
+  - name: amount
+    type: NUMERIC
+    description: 買上金額
+    required: true
+
+  - name: gross_profit
+    type: NUMERIC
+    description: 買上粗利
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: discount_amount
+    type: NUMERIC
+    description: 単品値引金額
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: campaign_code
+    type: STRING
+    description: 特売企画コード
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: card_id
+    type: STRING
+    description: カードID
+    comment: '非会員による購買データの場合は空。会員マスタの会員コードと紐づくコード。[（匿名化）](#カードidは自社で管理する番号を送ればいいの？)'
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    description: 基幹出力日時
+    required: true
+
+  - name: is_deleted
+    type: BOOLEAN
+    description: 削除フラグ
+    required: true

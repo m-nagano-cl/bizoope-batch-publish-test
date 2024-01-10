@@ -1,0 +1,32 @@
+{
+  "name": "generate_interface_definition",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "prebuild": "trash .work && mkdirp .work && cpx .vuepress/** .work/.vuepress",
+    "build": "npm run build:md && npm run build:page",
+    "build:md": "node index.js .work ../../assets/schema/interface_files ../../assets/schema/interface_files/__doc_template.md",
+    "build:page": "vuepress build .work",
+    "postbuild": "mkdirp ../../dist/連携ファイルフォーマット定義書 && npm run dist && trash .work",
+    "predist": "trash ../../dist/連携ファイルフォーマット定義書 && mkdirp ../../dist/連携ファイルフォーマット定義書",
+    "dist": "npm run dist:md && npm run dist:page",
+    "dist:md": "cpx .work/index.md ../../dist/連携ファイルフォーマット定義書",
+    "dist:page": "cpx \".work/.vuepress/dist/**\" ../../dist/連携ファイルフォーマット定義書/page",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^9.0.1",
+    "js-yaml": "^3.14.0",
+    "lodash": "^4.17.19",
+    "markdown-table": "^2.0.0",
+    "mkdirp": "^1.0.4"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "trash-cli": "^3.1.0",
+    "vuepress": "^1.5.3"
+  }
+}

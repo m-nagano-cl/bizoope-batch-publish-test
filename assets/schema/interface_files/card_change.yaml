@@ -1,0 +1,53 @@
+---
+hidden: true
+name: カード統合データ
+filename: card_change_*yyyymmddhhmiss*.tsv
+comment: |-
+  ハウスカードの再発行等により、カードIDが異なるが同一顧客として扱う場合に2カードIDを統合するためのデータです。
+fields:
+  - name: old_card_id
+    type: STRING
+    description: 旧カードID
+    required: true
+
+  - name: new_card_id
+    type: STRING
+    description: 新カードID
+    required: true
+
+  - name: card_change_operation
+    type: STRING
+    description: 処理フラグ
+    required: true
+    comment: "0:統合 1:解除"
+
+  - name: merged_ymd
+    type: DATE
+    description: 受付日付
+    required: true
+
+  - name: merged_time
+    type: STRING
+    description: 受付時刻
+    required: true
+    comment: HHMI形式
+
+  - name: merged_at_company_code
+    type: STRING
+    description: 受付企業コード
+
+  - name: merged_at_store_code
+    type: STRING
+    description: 受付店舗コード
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    description: 基幹出力日時

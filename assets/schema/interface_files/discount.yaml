@@ -1,0 +1,60 @@
+---
+name: 日別単品値引データ
+filename: discount_*yyyymmddhhmiss*.tsv
+fields:
+  - name: ymd
+    type: DATE
+    key: true
+    description: 年月日
+    required: true
+
+  - name: company_code
+    type: STRING
+    key: true
+    description: 企業コード
+    required: true
+
+  - name: store_code
+    type: STRING
+    key: true
+    description: 店舗コード
+    required: true
+
+  - name: item_code
+    type: STRING
+    key: true
+    description: 商品コード
+    required: true
+
+  - name: supplier_code
+    type: STRING
+    key: true
+    description: 取引先コード
+
+  - name: qty
+    type: NUMERIC
+    description: 数量
+    required: true
+
+  - name: amount
+    type: NUMERIC
+    description: 金額
+    required: true
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    description: 基幹出力日時
+    required: true
+
+  - name: is_deleted
+    type: BOOLEAN
+    description: 削除フラグ
+    required: true

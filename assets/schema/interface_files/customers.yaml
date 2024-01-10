@@ -1,0 +1,59 @@
+---
+name: 会員マスタ
+filename: customers_*yyyymmddhhmiss*.tsv
+fields:
+  - name: card_id
+    key: true
+    type: STRING
+    description: 会員コード
+    required: true
+    comment: '[（匿名化）](#カードidは自社で管理する番号を送ればいいの？)'
+
+  - name: customer_type
+    type: STRING
+    description: 会員区分
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: card_type
+    type: STRING
+    description: カード区分
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: admission_ymd
+    type: DATE
+    description: 入会日
+    comment: '[（未使用）](#「未使用」って？)'
+
+  - name: date_of_birth
+    type: DATE
+    description: 生年月日
+    comment: アプリケーション上は「年代」に変換されます。
+
+  - name: sex
+    type: STRING
+    description: 性別
+    required: true
+    comment: 1:男　2:女　3:その他（不明、企業等）
+
+  - name: zip
+    type: STRING
+    description: 郵便番号
+    comment: ハイフンなし
+
+  - name: host_created_on
+    type: DATE
+    description: 基幹登録日
+
+  - name: host_updated_on
+    type: DATE
+    description: 基幹更新日
+
+  - name: host_output_at
+    type: DATETIME
+    description: 基幹出力日時
+    required: true
+
+  - name: is_deleted
+    type: BOOLEAN
+    description: 削除フラグ
+    required: true
